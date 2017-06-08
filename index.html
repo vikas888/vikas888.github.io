@@ -359,6 +359,19 @@
 		    $scope.count = 0;
 		});
 		</script>
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<button ng-click="count = count + 1">Click Me! to demonstrate ng-click</button>
+		<p>{{ count }}</p>
+	</div>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+		    $scope.count = 0;
+		});
+	</script> 
+
+	
     <!-- //angular js code -->
     <!-- ******FOOTER****** --> 
     <footer class="footer">
