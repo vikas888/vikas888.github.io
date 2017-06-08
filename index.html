@@ -30,7 +30,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head> 
 
 <body>
@@ -348,7 +348,18 @@
             </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->
-
+    <!-- angular js code -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+		<h1 ng-mousemove="count = count + 1">Mouse Over Me!</h1>
+		<h2>{{ count }}</h2>
+	</div>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+		    $scope.count = 0;
+		});
+		</script>
+    <!-- //angular js code -->
     <!-- ******FOOTER****** --> 
     <footer class="footer">
         <div class="container text-center">
