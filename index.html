@@ -32,7 +32,12 @@
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head> 
-
+<style>
+	 .shrink {
+  	color: orange;
+  	font-family: Georgia,sans-serif;
+  }
+</style>
 <body>
     <!-- ******HEADER****** --> 
     <header class="header">
@@ -40,9 +45,14 @@
             <img class="profile-image img-responsive pull-left" src="assets/images/profile.jpg" alt="James Lee" />
             <div class="profile-content pull-left">
                 <h1 class="name">Vikas Chouhan</h1>
-                <h2 class="desc">Full Stack Web Developer</h2>
-                <h2 class="desc">Freelancer</h2>
-                <h2 class="desc">Co-Founder, ITS India Technologies</h2>  
+                <h3>
+					<a href="" class="typewrite" data-period="2000" data-type='[ "Full Stack Web Developer", "Freelancer", "Co-Founder, ITS India Technologies"]'>
+					<span class="wrap"></span>
+					</a>
+				</h3>
+                <h2 class="desc"></h2>
+                <h2 class="desc"></h2>
+                <h2 class="desc"></h2>  
                 <ul class="social list-inline">
                     <li><a href="https://in.linkedin.com/in/vikas-chouhan-61318599"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="https://github.com/vikaschouhan8"><i class="fa fa-github-alt"></i></a></li>
@@ -55,6 +65,76 @@
         </div><!--//container-->
     </header><!--//header-->
     
+    <script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        $(".nav-two").hide();
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+    $(window).scroll(function() {
+  		if ($(document).scrollTop() > 50) {
+			   $(".nav-one").hide();
+			   $(".nav-two").show();
+  		} else {
+    		 $(".nav-one").show();
+			   $(".nav-two").hide();
+  		}
+	});
+  </script>
+
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
@@ -63,10 +143,28 @@
                         <!-- </div>//content -->
                         <h2 class="heading">About Me</a></h2>
                         <div class="content">
-                            <p>I am keen interested in web development. I did three Internship in web development. Currently I am Working as a on job Trainee at <a href="http://www.infobeans.com/">InfoBeans Technologies Limited</a> Also during my college I with 4 of my friends started a software company named as <a href="https://itsindia.github.io/">"ITS INDIA TECHNOLOGIES"</a>. I worked and Developed two live projects. For the last two years I am doing web development using the technologies like PHP, HTML, CSS , JS , AJAX github (VCS) and Bootstrap. Currently, I am learning Angular JS.
+                            <p>I am keen interested in web development. I did three Internship in web development. During my college I with 4 of my friends started a software company named as <a href="https://itsindia.github.io/">"ITS INDIA TECHNOLOGIES"</a>. I worked and Developed two live projects. For the last two years I am doing web development using the technologies like PHP, HTML, CSS , JS , AJAX github (VCS) and Bootstrap. Currently, I am learning Angular JS.
                             </p>
+                            <p>I did three Internship in web development. Also during my college I with 4 of my friends started a software company named as "ITS INDIA TECHNOLOGIES". I worked and Developed two live projects.For the last two years I am doing web development using the technologies like PHP, HTML, CSS , JS , AJAX github (VCS) and Bootstrap. Currently, I am learning Angular JS.</p>
+                            <p>
+							I already completed 3 Internships, first is from Development center Indore, Durning which I worked on the Development of official website of a university teaching department iips, which is currently hosted on <a href="http://www.iips.edu.in ">http://www.iips.edu.in</a> 
+							</p>
+							<p>
+							2nd Internship is from idealVillage(Internshala remote  Internship) in which I worked as a front end developer.
+							</p>
+							<p>
+							3rd Internship is again from Development​ center Indore, where I worked as a full stack developer to develop a system for Performance based appraisal system (PBAS) University faculties under the rule of UGC, this is also a live project and is under the Development phase. You can check the code on github. <a href="https://github.com/dc-iips/iips-website">Github PBAS Project</a></p>
+							<p>Also take a look here</p>
+							</p>
+							<ul>
+								<li><a href="www.vikaschouhan8.github.io">www.vikaschouhan8.github.io</a></li>
+								<li><a href="www.technophilia.netnee.net">www.technophilia.netnee.net</a></li>
+								<li><a href="https://github.com/vikaschouhan8">https://github.com/vikaschouhan8</a></li>
+							</p>
+							</ul>	
+							
                             <p>I am Intern at Development Center, DAVV university, Indore, Pursuing Integrated MCA from International Institute of Professinal Studies. Currently I am Actively seeking full-time Job as Full Stack web developer.</p>    
-                            <p>My Technical skills include Angular JS, HTML, CSS, Javascript, Core Java</p>
+                            <p style="font-size: 120%">My Technical skills include Angular JS, HTML, CSS, Javascript, Core Java</p>
                         </div><!--//content-->
                         
 
@@ -358,7 +456,7 @@
 		app.controller('myCtrl', function($scope) {
 		    $scope.count = 0;
 		});
-		</script>
+	</script>
 	
     <!-- //angular js code -->
     <!-- ******FOOTER****** --> 
