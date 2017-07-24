@@ -1,6 +1,11 @@
-angular.module('vikas')
+(function() {
 
-.controller('mapCtrl', [ '$scope', function($scope) {
+  'use strict';
+
+angular.module('vikas')
+.controller('mapCtrl', mapCtrl);
+mapCtrl.$inject= ['$scope'];
+function mapCtrl($scope) {
             angular.extend($scope, {
                 indore: {
                 	lat: 22.7196,
@@ -30,4 +35,5 @@ angular.module('vikas')
             }
 
             $scope.addMarkers();
-        } ]);
+}
+})();

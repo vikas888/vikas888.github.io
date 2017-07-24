@@ -2,7 +2,10 @@
   'use strict';
 
   angular.module('vikas')
-    .controller('headCtrl', function($scope) {
+
+    .controller('headCtrl', headCtrl);
+    headCtrl.$inject= ['$scope'];
+    function headCtrl($scope) {
       $scope.isOpen = false;
 
       $scope.demo = {
@@ -10,5 +13,5 @@
         count: 0,
         selectedDirection: 'left'
       };
-    });
+    };
 })();
