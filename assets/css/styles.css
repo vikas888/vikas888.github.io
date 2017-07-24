@@ -7,6 +7,15 @@
  * Website: http://themes.3rdwavemedia.com/
 */
 /* ======= Base ======= */
+ .shrink {
+    color: orange;
+    font-family: Georgia,sans-serif;
+  }
+
+
+.fabToolbardemoBasicUsage md-fab-toolbar.md-right md-fab-trigger.align-with-text {
+  left: 7px; }
+
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
@@ -116,7 +125,7 @@ iframe {
 */
 /* ======= Header ======= */
 .header {
-  padding: 30px 0;
+  padding: 0 0 30px 0 ;
   background: #f5f5f5;
   border-top: 10px solid #778492;
 }
@@ -125,6 +134,7 @@ iframe {
   font-weight: bold;
 }
 .header .profile-image {
+  margin-top: 8px;
   margin-right: 30px;
 }
 .header .profile-content .name {
