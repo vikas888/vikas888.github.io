@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="vikas">  
+<html lang="en">  
 <head>
     <title>Vikas Chouhan</title>
     <!-- Meta -->
@@ -9,8 +9,6 @@
     <meta name="description" content="Responsive HTML5 Website Landing Page for Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://gitcdn.link/repo/angular/bower-material/master/angular-material.css">
-    <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
     <link rel="stylesheet" href="assets\css\material-design-iconic-font.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
@@ -29,64 +27,18 @@
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
-
+    <script src="scripts.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-aria.min.js"></script>
-    <!-- AngularJS Material Javascript now available via Google CDN; version 1.1.4 used here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
-        <!--UI-router-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <!--leaflet-->
-
-    <script src="https://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
-    <script src="https://cdn.bootcss.com/angular-leaflet-directive/0.9.1/angular-leaflet-directive_dev_mapped.js"></script>
-    <script src="https://tombatossals.github.io/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>  
-    <script src="controllers/app.js"></script>
-    <script src="controllers/mapCtrl.js"></script>
-    <script src="controllers/headCtrl.js"></script>
+    
 </head> 
 <body>
     <!-- ******HEADER****** --> 
     <header class="header">
 
-    <div ng-controller="headCtrl" ng-cloak>
-            <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
-                      md-direction="{{demo.selectedDirection}}">
-            <md-fab-trigger class="align-with-text">
-              <md-button aria-label="menu" class="md-fab md-primary">
-                <i class="zmdi zmdi-menu zmdi-hc-2x"></i>
-              </md-button>
-            </md-fab-trigger>
-
-            <md-toolbar>
-              <md-fab-actions class="md-toolbar-tools">
-                <md-button aria-label="comment" class="md-icon-button">
-                    <i class="zmdi zmdi-menu zmdi-hc-2x"></i>
-                </md-button>
-                <md-button aria-label="comment" class="md-icon-button">
-                    <a href="https://github.com/vikaschouhan8"><i class="zmdi zmdi-github zmdi-hc-2x"></i></a>
-                </md-button>
-                <md-button aria-label="label" class="md-icon-button">
-                    <a href="https://twitter.com/Iamvikash888"><i class="zmdi zmdi-twitter zmdi-hc-2x"></i></a>
-                </md-button>
-                <md-button aria-label="photo" class="md-icon-button">
-                    <a href="https://www.facebook.com/vikky8889"><i class="zmdi zmdi-facebook zmdi-hc-2x"></i></a>
-                </md-button>
-                <md-button aria-label="photo" class="md-icon-button">
-                    <a href="https://in.linkedin.com/in/vikas-chouhan-61318599"><i class="zmdi zmdi-linkedin zmdi-hc-2x"></i></a>
-                </md-button>
-              </md-fab-actions>
-            </md-toolbar>
-        </md-fab-toolbar>
-    </div>
         <div class="container">                       
             <img class="profile-image img-responsive pull-left" src="assets/images/profile.jpg" alt="James Lee" />
             <div class="profile-content pull-left">
@@ -113,6 +65,7 @@
             <a class="btn btn-cta-primary pull-right" href="https://in.linkedin.com/in/vikas-chouhan-61318599" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a> 
         </div><!--//container-->
     </header><!--//header-->
+    
     
     <script>
     var TxtType = function(el, toRotate, period) {
@@ -357,11 +310,15 @@
                  <aside class="info aside section">
                     <div class="section-inner">
                         <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content" ng-controller='mapCtrl'>
+                        <div class="content" style="height:200px;" >
+                            <h4>Mariyo Game</h4>
+                            <p>Click on the Mario and use arrow keys to play</p>
+                            <iframe src="https://mymario.github.io/" frameborder="0"></iframe>
+                            <!-- <img src="http://i1061.photobucket.com/albums/t480/ericqweinstein/mario.jpg"/> -->
+                        </div><!--//content-->
+                        <!-- <div class="content" ng-controller='mapCtrl'>
                             <leaflet lf-center="indore" markers="markers" height="350px" width="100%"></leaflet>
-                            <!-- <button ng-click="removeMarkers()">Remove markers</button>
-                            <button ng-click="addMarkers()">Add markers</button> -->
-                        </div><!--//content-->  
+                        </div>  -->
                     </div><!--//section-inner-->                 
                 </aside><!--//aside-->
 
