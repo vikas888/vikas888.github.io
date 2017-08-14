@@ -15,7 +15,12 @@
 
 .fabToolbardemoBasicUsage md-fab-toolbar.md-right md-fab-trigger.align-with-text {
   left: 7px; }
-
+  
+img {
+    position: relative;
+    left: 0;
+    top: 0;
+}
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
