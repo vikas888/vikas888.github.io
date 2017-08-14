@@ -1,1 +1,0 @@
-angular.module("vikas", ['ngMaterial', 'ui.router', 'leaflet-directive']);
